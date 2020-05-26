@@ -122,7 +122,8 @@
     <ClInclude Include="bubbleSort.h" />
     <ClInclude Include="bucketSort.h" />
     <ClInclude Include="countingSort.h" />
-    <ClInclude Include="heapSort.h" />
+    <ClInclude Include="heapLittleSort.h" />
+    <ClInclude Include="heapBigSort.h" />
     <ClInclude Include="insertionSort.h" />
     <ClInclude Include="mergeSort.h" />
     <ClInclude Include="quicksort.h" />

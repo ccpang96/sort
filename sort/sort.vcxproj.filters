@@ -41,9 +41,6 @@
     <ClInclude Include="shellSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="heapSort.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="mergeSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -54,6 +51,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="radixSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="heapLittleSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="heapBigSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

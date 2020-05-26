@@ -5,10 +5,11 @@
 #include"insertionSort.h"
 #include"shellSort.h"
 #include"selectionSort.h"
-#include"heapSort.h"
+#include"heapBigSort.h"
 #include"mergeSort.h"
 #include"countingSort.h"
 #include"bucketSort.h"
+#include"heapLittleSort.h"
 using namespace std;
 using namespace SortTestHelper;
 using namespace BubbleSort;
@@ -16,10 +17,11 @@ using namespace QuickSort;
 using namespace InsertionSort;
 using namespace ShellSort;
 using namespace SelectionSort;
-using namespace HeapSort;
+using namespace HeapBigSort;
 using namespace MergeSort;
 using namespace CountingSort;
 using namespace BucketSort;
+using namespace HeapLittleSort;
 
 int main() {
 	int arr[10] = { 10, 9, 8, 6, 5, 3, 1, 2, 4, 7 };
@@ -44,49 +46,57 @@ int main() {
 	//3.≤‚ ‘≤Â»Î≈≈–Ú
 	cout << "*****************≤‚ ‘≤Â»Î≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-	//insertSort(arr, length);
+//insertSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 	
 	//4.≤‚ ‘œ£∂˚≈≈–Ú (Àı–°‘ˆ¡ø≤Â»Î≈≈–Ú)
-	cout << "*****************≤‚ ‘≤Â»Î≈≈–Ú£∫********************" << endl;
+	cout << "*****************≤‚ ‘œ£∂˚≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-//	shellSort(arr, length);
+//shellSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 	
 	//5.≤‚ ‘—°‘Ò≈≈–Ú
-	cout << "*****************≤‚ ‘≤Â»Î≈≈–Ú£∫********************" << endl;
+	cout << "*****************≤‚ ‘—°‘Ò≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-	//selectionSort(arr, length);
+//selectionSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 	
-	//6.≤‚ ‘∂—≈≈–Ú
+	//6.≤‚ ‘¥Û∂•∂—∂—≈≈–Ú
 	cout << "*****************≤‚ ‘∂—≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-	//heapSort(arr, length);
+//heapBigSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
+	
+	//6.2≤‚ ‘–°∂•∂—≈≈–Ú
+	cout << "*****************≤‚ ‘∂—≈≈–Ú£∫********************" << endl;
+	printArray(arr, 10);
+heapLittleSort(arr, length);
+	printArray(arr, 10);
+	cout << endl << endl;
+
 
 	//7.πÈ≤¢≈≈–Ú
 	cout << "*****************≤‚ ‘πÈ≤¢≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-	//       mergeSort(arr, length);
+//mergeSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 
 	//7.º∆ ˝≈≈–Ú
 	cout << "*****************≤‚ ‘º∆ ˝≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-//	countingSort(arr, length);
+//countingSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 
 	//8.Õ∞◊”≈≈–Ú
 	cout << "*****************≤‚ ‘Õ∞≈≈–Ú£∫********************" << endl;
 	printArray(arr, 10);
-	bucketSort(arr, length);
+//bucketSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 
