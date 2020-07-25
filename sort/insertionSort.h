@@ -4,6 +4,7 @@ namespace InsertionSort {
 	void insertSort(int arr[],int length) {
 		if (arr == nullptr || length < 0)
 			return;
+
 		for (int i = 1; i < length; i++) {
 			int preIndex = i - 1;
 			int current = arr[i]; //开辟了O(1)空间保存了当前值

@@ -39,7 +39,7 @@ int main() {
 	//2.²âÊÔ¿ìËÙÅÅĞò
 	cout << "*****************²âÊÔ¿ìËÙÅÅĞò£º********************" << endl;
 	printArray(arr, 10);
-//	quickSort(arr, length,0,length-1);
+	//qsort(arr, 0,length-1);
 	printArray(arr, 10);
 	cout << endl << endl;
 
@@ -74,7 +74,7 @@ int main() {
 	//6.2²âÊÔĞ¡¶¥¶ÑÅÅĞò
 	cout << "*****************²âÊÔ¶ÑÅÅĞò£º********************" << endl;
 	printArray(arr, 10);
-heapLittleSort(arr, length);
+//heapLittleSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 
@@ -82,7 +82,7 @@ heapLittleSort(arr, length);
 	//7.¹é²¢ÅÅĞò
 	cout << "*****************²âÊÔ¹é²¢ÅÅĞò£º********************" << endl;
 	printArray(arr, 10);
-//mergeSort(arr, length);
+mergeSort(arr, length);
 	printArray(arr, 10);
 	cout << endl << endl;
 
@@ -105,3 +105,5 @@ heapLittleSort(arr, length);
 	system("pause");
 	return 0;
 }
+
+

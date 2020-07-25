@@ -2,49 +2,57 @@
 #include<iostream>
 #include<cmath>
 #include"SortTestHelper.h"
+//应该在执行归并的过程中始终使用一个temp数组，这样减少数组的创建和开销操纵
 namespace MergeSort {
-
-	//mrege的操作
-	void merge(int arr[], int left, int mid, int right) {
-		
-		int *temp = new int[right - left + 1]; //temp数组暂存合并的有序序列
-		int i = left; //左序列指针
-		int j = mid + 1; //右序列指针
-		int t = 0; //临时数组指针
-
-		while (i <= mid && j <= right) {
-			if (arr[i] <= arr[j])
+	void merge(int *arr, int start, int mid, int end, int *temp) {
+		int i = start;
+		int j = mid + 1;
+		int t = 0;
+		while (i <= mid && j <= end) {
+			if (arr[i] <= arr[j])  //保证了归并操作的稳定性
 				temp[t++] = arr[i++];
 			else
 				temp[t++] = arr[j++];
 		}
-
-		//左边数组完毕
 		while (i <= mid)
 			temp[t++] = arr[i++];
-		while (j <= right)
+
+		while (j <= end)
 			temp[t++] = arr[j++];
 
-		//将temp数组中的内容拷贝到原数组中
 		t = 0;
-		while (left <= right)
-			arr[left++] = temp[t++];
-		delete[]temp;
+		while (start <= end)
+			arr[start++] = temp[t++];
 	}
 
-	//分治
-	void _mergeSort(int arr[], int left, int right) {
-
-		if (left >= right)
+	void _mergesort(int *arr, int start, int end, int *temp) {
+		if (start >= end)
 			return;
-		int mid = (left + right) / 2; //取中间的值
-		_mergeSort(arr, left, mid);
-		_mergeSort(arr, mid + 1, right);
-		merge(arr, left, mid, right);
+		int mid = start + (end - start) / 2;
+
+		//递归分治
+		_mergesort(arr, start, mid, temp); //此处是mid
+		_mergesort(arr, mid + 1, end, temp);
+
+		//优化，如果有序就不需要再归并了
+		if (arr[mid] < arr[mid + 1])
+			return;
+
+		merge(arr, start, mid, end, temp);
 	}
 
-	//归并排序
-	void mergeSort(int arr[], int length) {
-		_mergeSort(arr, 0, length - 1);
+	void mergeSort(int *arr, int length) {
+		//O(n)的空间
+
+		int *temp = new int[length];
+
+		_mergesort(arr, 0, length - 1, temp);
+
+		temp = nullptr;  //防止野指针
+		delete[]temp;	//防止内存泄露
+
 	}
+
+
+
 }

@@ -2,12 +2,12 @@
 #include<exception>
 #include<algorithm>
 namespace QuickSort {
-	int partition(int arr[],int length,int start,int end) {
-		if (arr == nullptr || length == 0 || start < 0 || end >=length)
+	int partition(int arr[], int length, int start, int end) {
+		if (arr == nullptr || length == 0 || start < 0 || end >= length)
 			throw new std::exception("Invaild Parmeters");
 		//选择末尾元素作为基准值
-		
-		int small = start - 1; 
+
+		int small = start - 1;
 		for (int index = start; index < end; ++index) {
 			if (arr[index] < arr[end]) {
 				++small;
@@ -20,13 +20,13 @@ namespace QuickSort {
 	}
 
 
-	void quickSort(int arr[],int length,int start,int end) {
+	void quickSort(int arr[], int length, int start, int end) {
 		if (start == end)
 			return;
 		int index = partition(arr, length, start, end);
-		if(index > start)
-			quickSort(arr,length,start, index-1);
-		if(index < end)
+		if (index > start)
+			quickSort(arr, length, start, index - 1);
+		if (index < end)
 			quickSort(arr, length, index + 1, end);
 	}
 }
